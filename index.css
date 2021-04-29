@@ -1,7 +1,14 @@
+.container {
+    background-image: url(./media/pexels-burst-374754.jpg);
+    min-height: 700px;
+    background-size: cover;
+    background-position: center;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: red;    
+    background:rgb(20, 173, 161);
 }
 
 nav {
@@ -10,7 +17,7 @@ nav {
 }
 ul{
     width: 80%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 
 }
