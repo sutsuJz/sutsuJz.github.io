@@ -29,7 +29,7 @@ ul li {
 
 ul li:hover
 {
-    background: blue;
+    background: rgb(242, 242, 245);
 }
 
 ul li a{
@@ -48,6 +48,27 @@ ul li a{
     display: none;
     
 }
+
+h1 {
+    font-size: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media(max-width:900px)
 {
     .toggle{
