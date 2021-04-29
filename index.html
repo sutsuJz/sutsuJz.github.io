@@ -1,7 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Johannes Jokinen">
+  <meta name="description" content="WPD Final assingment">
+  <meta name="keywords" content="WPD, Tiko, Johannes">
+  <link rel="stylesheet" type="text/css" href="me.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>tiedot</title>
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+  <nav>
+    <div class="toggle">
+      <i class="fa fa-bars menu" aria-hidden="true"></i>
+    </div>
+    <ul>
+      <li> <a href="etusivu.html">Etusivu</a></li>
+      <li> <a href="me.html">Minun tiedot</a></li>
+      <li> <a href="mysti.html">Mystin kuvagalleria</a></li>
+      <li> <a href="documentation.html">Dokumentaatiosivulle</a></li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.menu').click(function () {
+          $('ul').toggleClass('active')
+        })
+      })
+    </script>
+
+    <script>
+      var nav = document.getElementById('nav');
+      window.onscroll = function () {
+        if (window.pageYOffset > 10) {
+          nav.style.position = "fixed";
+          nav.style.top = 10;
+        } else {
+          box.style.position = "absolute";
+          box.style.top = 10;
+        }
+      }
+    </script>
+
+  </nav>
+  <div>
+    <h1>
+      Tervetuloa minun webbisivustolle!
+    </h1>
+    <h2>
+      Tietoja minusta:
+    </h2>
+    <p id="tiedot">
+      <img id="mina" src="../website/images/kuvaj.jpg" alt="kuva">
+      Nimi: Johannes Jokinen
+      <br>
+      Opiskelijanumero: N3837
+      <br>
+      Opintoryhmä: HTK19S1
+    </p>
+  </div>
+  <div>
+    <h2 id="kello">Lisäsin tänne vielä maailmankellon.</h2>
+  </div>
+  <table>
+
+    
+      <tr>
+        <td>
+          <select name="city" size="1" onchange="updateclock(this);">
+            <option value="" selected>Jyväskylä</option>
+            <option value="0">London GMT</option>
+            <option value="1">Rome</option>
+            <option value="7">Bangkok</option>
+            <option value="8">Hong Kong</option>
+            <option value="9">Tokyo</option>
+            <option value="10">Sydney</option>
+            <option value="12">Fiji</option>
+            <option value="-10">Hawaii</option>
+            <option value="-8">San Francisco</option>
+            <option value="-5">New York</option>
+            <option value="-3">Buenos Aires</option>
+          </select>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <script>
+
+            /*
+            Drop Down World Clock- By JavaScript Kit (http://www.javascriptkit.com)
+            Portions of code by Kurt @ http://www.btinternet.com/~kurt.grigg/javascript
+            This credit notice must stay intact
+            */
+
+            if (document.all || document.getElementById)
+              document.write('<span id="worldclock" style="font:bold 16px Arial;"></span><br />')
+
+            zone = 0;
+            isitlocal = true;
+            ampm = '';
+
+            function updateclock(z) {
+              zone = z.options[z.selectedIndex].value;
+              isitlocal = (z.options[0].selected) ? true : false;
+            }
+
+            function WorldClock() {
+              now = new Date();
+              ofst = now.getTimezoneOffset() / 60;
+              secs = now.getSeconds();
+              sec = -1.57 + Math.PI * secs / 30;
+              mins = now.getMinutes();
+              min = -1.57 + Math.PI * mins / 30;
+              hr = (isitlocal) ? now.getHours() : (now.getHours() + parseInt(ofst)) + parseInt(zone);
+              hrs = -1.575 + Math.PI * hr / 6 + Math.PI * parseInt(now.getMinutes()) / 360;
+              if (hr < 0) hr += 24;
+              if (hr > 23) hr -= 24;
+              ampm = (hr > 11) ? "PM" : "AM";
+              statusampm = ampm.toLowerCase();
+
+              hr2 = hr;
+              if (hr2 == 0) hr2 = 12;
+              (hr2 < 13) ? hr2 : hr2 %= 12;
+              if (hr2 < 10) hr2 = "0" + hr2
+
+              var finaltime = hr2 + ':' + ((mins < 10) ? "0" + mins : mins) + ':' + ((secs < 10) ? "0" + secs : secs) + ' ' + statusampm;
+
+              if (document.all)
+                worldclock.innerHTML = finaltime
+              else if (document.getElementById)
+                document.getElementById("worldclock").innerHTML = finaltime
+              else if (document.layers) {
+                document.worldclockns.document.worldclockns2.document.write(finaltime)
+                document.worldclockns.document.worldclockns2.document.close()
+              }
+              setTimeout('WorldClock()', 1000);
+            }
+
+            window.onload = WorldClock
+                //-->
+          </script>
+
+          <!--Place holder for NS4 only-->
+         
+          
+        </td>
+    
+    </tr>
+  </table>
 </body>
+
 </html>

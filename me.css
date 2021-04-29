@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../website/images/iso3.jpg");
+    
+    
+}
+
+nav {
+    width: 100%;
+    background:white;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+
+}
+ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+
+ul li:hover
+{
+    background: red;
+}
+
+ul li a{
+    color:black;
+    text-decoration: none;
+}
+.toggle
+{
+    width: 100%;
+    padding: 10px 20px;
+    background: white;
+    text-align: right;
+    box-sizing: border-box;
+    color: black;
+    font-size: 30px;
+    display: none;
+    
+}
+@media(max-width:900px)
+{
+    .toggle{
+        display:block;
+    }
+
+ul{
+    display: none;
+}
+ul li {
+    display: block;
+    text-align: center;
+}
+.active
+{
+    display: block;
+}
+}
+p{
+    color: white;
+}
+h1{
+    color: white;
+}
+h2{
+    color: white;
+}
+#mina{
+    float: left;
+    margin-right: 15px;
+    height: 400px;
+    width: 600px;
+}
+#tiedot{
+    font-size: 25px;
+}
+td{
+    color: white;
+    
+}
+table{
+    margin-left: 1150px;
+    margin-top: -150px;
+}
+table h2{
+    color: white;
+}
+#kello{
+    margin-left: 1150px;
+   
+}
