@@ -21,11 +21,31 @@
       <li> <a href="tekniikka.html">Tekniikka</a></li>
       <li> <a href="scrum.html">Scrummaster</a></li>
     </ul>
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+          $('.menu').click(function () {
+            $('ul').toggleClass('active')
+          })
+        })
+      </script>
+  
+      <script>
+        var nav = document.getElementById('nav');
+        window.onscroll = function () {
+          if (window.pageYOffset > 10) {
+            nav.style.position = "fixed";
+            nav.style.top = 10;
+          } else {
+            box.style.position = "absolute";
+            box.style.top = 10;
+          }
+        }
+      </script>
   </nav>
 
   <h2>Etusivu!</h2>
-  <p>Olen johannes</p>
+  <p>Olen Johannes</p>
   
 </body>
 

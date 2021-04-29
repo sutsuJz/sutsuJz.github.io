@@ -1,9 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../website/images/iso3.jpg");
-    
-    
+    background-color: red;    
 }
 
 nav {
@@ -35,7 +33,7 @@ ul li a{
 {
     width: 100%;
     padding: 10px 20px;
-    background: white;
+    background: rgb(20, 173, 161);
     text-align: right;
     box-sizing: border-box;
     color: black;
@@ -64,33 +62,8 @@ ul li {
 p{
     color: black;
 }
-h1{
-    color: white;
-}
+
 h2{
     color: rgb(0, 0, 0);
 }
-#mina{
-    float: left;
-    margin-right: 15px;
-    height: 400px;
-    width: 600px;
-}
-#tiedot{
-    font-size: 25px;
-}
-td{
-    color: white;
-    
-}
-table{
-    margin-left: 1150px;
-    margin-top: -150px;
-}
-table h2{
-    color: white;
-}
-#kello{
-    margin-left: 1150px;
-   
-}
+
