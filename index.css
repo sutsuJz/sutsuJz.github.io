@@ -219,6 +219,13 @@ nav {
     .etusivu img {
         display: none;
     }
+    p {
+        font-family: 'Poppins', sans-serif;
+        display:block;
+        margin: 2%;
+        text-align: center;
+        font-weight: 200;
+    }
     
 
 }
@@ -239,5 +246,12 @@ nav {
     }
     .etusivu img {
         display: none;
+    }
+    p {
+        font-family: 'Poppins', sans-serif;
+        display:block;
+        margin: 2%;
+        text-align: center;
+        font-weight: 200;
     }
   }
