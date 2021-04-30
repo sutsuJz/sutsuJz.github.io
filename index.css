@@ -234,4 +234,10 @@ nav {
       margin: 5px;
       border-radius: 5px;
     }
+    .container h1 {
+        font-size: 30px;
+    }
+    .etusivu img {
+        display: none;
+    }
   }
