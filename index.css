@@ -68,7 +68,7 @@ ul li a{
 .container h1 {
     font-size: 100px;
     font-family: 'Poppins', sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     margin-top: 350px;
     padding: 0;
     color: white;
@@ -227,7 +227,6 @@ nav {
     .container h1 {
         font-size: 60px;
         font-family: 'Poppins', sans-serif;
-        font-weight: 300;
         margin-top: 350px;
         padding: 0;
         color: white;
@@ -259,7 +258,6 @@ nav {
     .container h1 {
         font-size: 60px;
         font-family: 'Poppins', sans-serif;
-        font-weight: 300;
         margin-top: 350px;
         padding: 0;
         color: white;
