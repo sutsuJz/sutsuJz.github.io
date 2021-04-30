@@ -50,8 +50,22 @@ ul li a{
     display: none;
     
 }
+.etusivu h1 {
+    color:black;
+    font-family: 'Poppins', sans-serif;
+    display:block;
+    margin: 2% 10%;
+    text-align: center;
+}
+.etusivu h2 {
+    color:black;
+    font-family: 'Poppins', sans-serif;
+    display:block;
+    margin: 2% 10%;
+    text-align: center;
+}
 
-h1 {
+.container h1 {
     font-size: 100px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -68,9 +82,21 @@ h1 {
                   35px 35px 0px #c11a2b;
 
 }
+img {
+    filter: brightness(80%);
+    float: right;
+    width: 20%;
+    margin-right: 15%;
+    }
 
 p {
     font-family: 'Poppins', sans-serif;
+    display:block;
+    margin: 2% 10%;
+    text-align: center;
+    font-weight: 200;
+    margin-right: 40%;
+    margin-left: 20%;
 }
 
 nav {
@@ -141,6 +167,7 @@ nav {
   }
   .test {
     background-color: rgba(0, 0, 0, 0.562);
+    transition: 5s ease;
     
   }
   .test h3 {
@@ -149,13 +176,12 @@ nav {
   .test .burger div {
       background-color: white;
   }
+  .test a{
+      color: white;
+  }
 
   .slideUp {
-    animation-name: slideUp;
-    -webkit-animation-name: slideUp;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    visibility: visible;
+    transition: 3s ease;
   }
   
 
