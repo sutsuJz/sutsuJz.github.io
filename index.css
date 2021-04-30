@@ -213,6 +213,13 @@ nav {
         box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
       }
     
+    .container h1 {
+        font-size: 60px;
+    }
+    .etusivu img {
+        display: none;
+    }
+    
 
 }
 
