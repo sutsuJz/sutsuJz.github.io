@@ -15,26 +15,26 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-ul{
+.navig ul{
     width: 80%;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
 
 }
-ul li {
+.navig ul li {
     list-style: none;
     display: inline-block;
     padding: 20px;
     font-family: 'Poppins', sans-serif;
 }
 
-ul li:hover
+.navig ul li:hover
 {
     background: rgb(242, 242, 245);
 }
 
-ul li a{
+.navig ul li a{
     color:black;
     text-decoration: none;
 }
@@ -216,13 +216,7 @@ nav {
     .etusivu img {
         display: none;
     }
-    p {
-        font-family: 'Poppins', sans-serif;
-        display:block;
-        margin: 2%;
-        text-align: center;
-        font-weight: 200;
-    }
+    
 
     .container h1 {
         font-size: 60px;
@@ -274,7 +268,7 @@ nav {
     .etusivu img {
         display: none;
     }
-    p {
+   .etusivu p {
         font-family: 'Poppins', sans-serif;
         display:block;
         margin: 2%;
@@ -282,3 +276,83 @@ nav {
         font-weight: 200;
     }
   }
+
+    .container-1{
+    display: flex;
+    }
+
+    .container-1 div, .container-2 div{
+        border: 3px red solid;
+        padding: 10px;
+        }
+    .container-1 h2,p,ul,img .container-2 h2{
+        margin-left: 30%;
+        margin-top: 20px;
+        
+    }
+    
+    .box-1{
+    flex: 1;
+    order: 1;
+    }
+    .box-1 img {
+        margin-bottom: 10px;
+    }
+    .box-2{
+    flex: 1;
+    order: 2;
+    }
+    .box-2 img {
+        margin-bottom: 30px;
+    }
+    .box-3{
+    flex: 1;
+    order: 3;
+    }
+    .container-2{
+    display: flex;
+    align-items: flex-start;
+    }
+    .container-2-box{
+    width: 50%;
+    }
+    .container-2-box img{
+        padding-top: 10px;
+        }
+    
+.data{ 
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+
+#angular {
+    margin-left: 15%;
+    
+    margin-top: -25px;
+    height: 200px;
+    width: auto;
+    position: center;
+    margin-left: 130px;
+
+}
+
+#mysli {
+    height: 150px;
+    width: auto;
+    position: center;
+    margin-left: 130px;
+
+}
+#node {
+    height: 150px;
+    width: auto;
+    position: center;
+    margin-left: 130px;
+
+}
+
+ul {
+    margin-top:5px;
+    margin-bottom:5px;
+}
