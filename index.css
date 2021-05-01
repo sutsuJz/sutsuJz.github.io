@@ -54,15 +54,29 @@ body {
     color:black;
     font-family: 'Poppins', sans-serif;
     display:block;
-    margin: 2% 10%;
-    text-align: center;
+    margin-left: 0%;
+    text-align: left;
 }
 .etusivu h2 {
     color:black;
     font-family: 'Poppins', sans-serif;
     display:block;
     margin: 2% 10%;
-    text-align: center;
+    text-align: left;
+}
+.etusivu {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0px;
+}
+.etusivu p {
+    text-align: left;
+    margin-left: 0%;
+    margin-right: 32%;
+}
+#mie {
+    margin-bottom: -30%;
+    margin-left: 0px
 }
 
 .container h1 {
@@ -89,7 +103,7 @@ img {
     margin-right: 15%;
     }
 
-p {
+.container p {
     font-family: 'Poppins', sans-serif;
     display:block;
     margin: 2% 10%;
@@ -279,6 +293,8 @@ nav {
 
     .container-1{
     display: flex;
+    background-color: antiquewhite;
+    margin-top: 25px;
     }
 
     
@@ -338,6 +354,7 @@ nav {
     }
     .container-2{
     display: flex; 
+    background-color: antiquewhite;
     
        
     }
@@ -410,3 +427,4 @@ ul {
     margin-top:5px;
     margin-bottom:5px;
 }
+
