@@ -138,6 +138,10 @@ nav {
     margin-left: 5%;
     flex-grow: 3;
   }
+  .esi p{
+      margin-top: 50px;
+      margin-bottom: 50px;
+  }
   
   .navig {
     display: flex;
@@ -428,3 +432,49 @@ ul {
     margin-bottom:5px;
 }
 
+.teksis {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+}
+
+.teksis p {
+    margin-left: 0%;
+}
+
+#createdb {
+    height: 400px;
+    width: auto;
+    margin-left: 0px;
+    position: absolute;
+}
+
+#quizb {
+    height: 400px;
+    width: auto;
+    position:absolute;
+    margin-right: 0px;
+    
+}
+
+#qbend {
+    margin-top: 480px;
+}
+
+#seqy {
+    height: auto;
+    width: 500px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+.box {
+    height: 350px;
+    width: 45%;
+    float: left;
+}
+.box1 {
+    height: 350px;
+   float:right ;
+   width: 45%;
+}

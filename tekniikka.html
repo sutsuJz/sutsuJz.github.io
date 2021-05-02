@@ -7,6 +7,7 @@
   <meta name="description" content="Portfolio">
   <meta name="keywords" content="Portfolio, Ticorporate, Tiko, Johannes">
   <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="prism.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title>Johannes Jokinen</title>
   <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
@@ -44,6 +45,11 @@
     <h1>Tekniikka</h1>
   </div>
 
+  <div class="esi">
+    <p>Tällä sivulla kerron teknologiasta ja työkaluista, jota on tullut käytettyä projektin aikana.
+    <br> Alle on listattu asiat joiden parissa tuli työskenneltyä, ja muutama pointti jokaisesta</p>
+    
+  </div>
   <div class="data">
     <div class="container-1">
       <div class="box-1">
@@ -109,8 +115,110 @@
       </div>
     </div>
   </div>
+  <div class="teksis">
+    <h1>Quizit</h1>
+    <p>Minun vastuualueeseen kuului quizien toimintalogiikka. Tein töitä pääosin toisen koodarin kanssa yhdessä. Quizeja tehdessä pääsi tutustumaan
+      tietokantoihin, backendiin ja frontendiin kunnolla. Projektin alussa, minulla oli jonkinnäköinen ajatus siitä, miten koko paketti yhdessä
+    toimii, mutta tässä vaiheessa kaikkien osien yhdessä toimiminen alkaa olla jo ymmärrettävää, ja siitä on saanut paljon selkeämmän kuvan</p>
+    <h2>Quizit - Tietokannat</h2>
+    <p>Quizeja varten tietokantoihin piti luoda neljä eri taulua; Quiz, question, userquiz ja wronganswers. Tämän lisäksi komponenttiin piti hakea tiedot 
+      käyttäjästä, tämän tasosta, ja mahdollistaa tietokantojen muokkaamisen quizin oikeiden vastausten määrästä riippuen. Alla olevissa kuvissa on demonstroituna
+       tietokannan luomista, ja tietojen hakemista tietokannasta backendin kautta.
+    </p>
+    <div>
+      <pre class="language-css box"><code>
+CREATE TABLE Quiz (
+  quiz INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(30) NOT NULL,
+  info VARCHAR(300) NOT NULL,
+  reward INT NOT NULL,
+  rewardxp INT NOT NULL
+) ENGINE=INNODB;
+
+CREATE TABLE Question (
+  question_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  question VARCHAR(200) NOT NULL,
+  correct VARCHAR(30) NOT NULL,
+  mediaurl VARCHAR(100),
+  quiz INT NOT NULL,
+  CONSTRAINT question_quiz_fk 
+      FOREIGN KEY (quiz) REFERENCES Quiz(quiz)
+          ON UPDATE RESTRICT
+          ON DELETE CASCADE
+) ENGINE=INNODB;
+        </code> </pre>
+        <pre class="language-javascript box1"><code>
+// Metodi, joka hakee tietyn quizin kysymykset kannasta
+getQuestions: (req, res) => {
+    Question.findAll({
+        where: {
+            quiz: req.params.quiz
+        }
+    }).then((questions) => {
+        res.json(questions);
+    }).catch((err) => {
+        console.log(err);
+    });
+},
+
+// Metodi, joka hakee kysymystä vastaavat väärät vastaukset
+getWrongAnswers: (req, res) => {
+    WrongAnswers.findAll({
+        where: {
+            question_id: req.params.question
+        }
+    }).then((answers) => {
+        res.json(answers);
+    }).catch((err) => {
+        console.log(err);
+    });
+},
+        </code> </pre>
+    </div>
+
+    <h2 id="qbend">Quizit - Backend</h2>
+    <p>Backendin puolella piti tehdä mahdolliseksi quizien löytäminen frontendiin tietokannoista, sekä niiden muokkaaminen frontendin tapahtumien perusteella.
+      Päätimme käyttää sequelizea tietokantojen käsittelyyn, ja tämä osoittautui mielestäni toimivaksi ratkaisuksi. Alla esimerkkikuvia Sequelizen mallista ja backendista.
+    </p> 
+    <pre class="language-javascript box"><code>
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = require('../dbconnection');
+
+// Sequelize-malli quizeille
+const Quiz = sequelize.define('Quiz', {
+    quiz: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    info: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    reward: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    rewardxp: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
+}, { 
+    freezeTableName: true
+});
+
+module.exports = Quiz;
+      </code> </pre>
+
+  </div>
 
  <script src="fsa.js"></script>
+ <script src="prism.js"></script>
 </body>
 
 </html>
