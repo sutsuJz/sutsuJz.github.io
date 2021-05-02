@@ -302,7 +302,7 @@ nav {
     }
 
     
-    .container-1 h2,p,ul,img .container-2 h2,p,ul,img{
+    .container-1 h2,p,img .container-2 h2,p,img{
         margin-left: 30%;
         margin-top: 20px;
         
@@ -380,40 +380,6 @@ nav {
     margin-right: 20%;
 }
 
-
-#angular {
-    margin-left: 15%;
-    
-    margin-top: -25px;
-    height: 200px;
-    width: auto;
-    position: center;
-    margin-left: 130px;
-
-}
-
-#mysli {
-    height: 150px;
-    width: auto;
-    position: center;
-    margin-left: 130px;
-
-}
-#node {
-    height: 150px;
-    width: auto;
-    position: center;
-    margin-left: 130px;
-
-}
-
-#seq {
-    margin-top: -2px;
-    height: 180px;
-    width: auto;
-    position: center;
-}
-
 #git {
     margin-top: -2px;
     height: 180px;
@@ -421,16 +387,7 @@ nav {
     position: center;
 }
 
-#disc {
-    margin-top: -2px;
-    height: 180px;
-    width: auto;
-    position: center;
-}
-ul {
-    margin-top:5px;
-    margin-bottom:5px;
-}
+
 
 .teksis {
     margin-left: 20%;
@@ -479,6 +436,73 @@ ul {
    width: 45%;
 }
 
+.box9 {
+    float: right;
+    width: 510px;
+    height: 350px;
+}
 .fend {
+    margin-top: 480px;
+}
+
+.gridContainer h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 5% auto;
+    font-size: 1.6em;
+    line-height: 0.9em;
+}
+
+.gridContainer {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    margin-bottom: 30px;
+    justify-content: space-around;
+    background-color: antiquewhite
+}
+
+.gridItem {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: antiquewhite;
+}
+
+
+@media screen and (max-width: 600px) {
+    .gridContainer {
+        grid-template-columns: repeat(auto-fill, minmax(211px, 1fr));
+    }    
+    .data{ 
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .gridContainer, .gridItem {
+        
+        background-color: white;
+    }
+   
+}
+
+.gridContainer img {
+    width: 60%;
+    margin-left: 20%;
+}
+
+
+.gridContainer ul {
+    margin:auto;
+}
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    font-size: 12px;
+    box-shadow: 0px -4px 2px -2px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    height: 50px;
     margin-top: 480px;
 }

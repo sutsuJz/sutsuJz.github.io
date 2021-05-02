@@ -51,69 +51,65 @@
     
   </div>
   <div class="data">
-    <div class="container-1">
-      <div class="box-1">
+    <div class="gridContainer">
+      <div class="gridItem">
         <h2>Angular</h2>
-        <img id="angular" src="media/Angular.png" alt="jypi">
+        <img  src="media/hjhj.png" alt="jypi">
         <ul>
           <li>Typescript</li>
           <li>HTML</li>
           <li>CSS</li>
         </ul>
       </div>
-      <div class="box-2">
+      <div class="gridItem">
         <h2>MySQL</h2>
-        <img id="mysli" src="media/mysli2.png" alt="jypi">
+        <img src="media/mysli2.png" alt="jypi">
       <ul>
         <li>Tietokantojen rakennus</li>
         <li>Tietokantojen muokkaus ja ylläpito</li>
         <li>PHPMyadmin</li>
       </ul>
-
       </div>
-      <div class="box-3">
+      <div class="gridItem">
         <h2>Node.js</h2>
-        <img id="node" src="media/node.png" alt="jypi">
+        <img src="media/node.png" alt="jypi">
         <ul>
           <li>Javascript</li>
           <li>Tietokannat</li>
           <li>Nodemailer</li>
         </ul>
       </div>
-    </div>
-    <div class="container-2">
-      <div class="box-4">
-        <h2>Sequelize</h2>
-        <img id="seq" src="media/seq.png" alt="jypi">
-        <ul>
-          <li>Tietokantojen mallinnus backendiin</li>
-          <li>Tietokantojen muokkaaminen frontendista</li>
-        </ul>
-      </div>
-
-      <div class="box-5">
+      <div class="gridItem">
         <h2>Git</h2>
-        <img id="seq" src="media/git.png" alt="jypi">
+        <img src="media/git.png" alt="jypi">
         <ul>
           <li>Github desktop</li>
           <li>Zenhub</li>
           <li>Gitin käyttö versionhallinnassa</li>
         </ul>
       </div>
-
-      <div class="box-6">
+      <div class="gridItem">
+        <h2>Sequelize</h2>
+      <img src="media/seq.png" alt="jypi">
+      <ul>
+        <li>Tietokantojen mallinnus backendiin</li>
+        <li>Tietokantojen muokkaaminen frontendista</li>
+      </ul>
+      </div>
+      <div class="gridItem">
         <h2>Muut sovellukset</h2>
-        <img id="disc" src="media/disc.png" alt="jypi">
-        <ul>
-          <li>Discord</li>
-          <li>Teams</li>
-          <li>Zoom</li>
-          <li>Visual studio code</li>
-          <li>MAMP</li>
-          <li>Postman</li>
-        </ul>
+      <img src="media/disc.png" alt="jypi">
+      <ul>
+        <li>Discord</li>
+        <li>Teams</li>
+        <li>Zoom</li>
+        <li>Visual studio code</li>
+        <li>MAMP</li>
+        <li>Postman</li>
+      </ul>
       </div>
     </div>
+
   </div>
   <div class="teksis">
     <h1>Quizit</h1>
@@ -178,7 +174,7 @@ getWrongAnswers: (req, res) => {
 
 <h2 id="qbend">Quizit - Backend</h2>
     <p>Backendin puolella piti tehdä mahdolliseksi quizien löytäminen frontendiin tietokannoista, sekä niiden muokkaaminen frontendin tapahtumien perusteella.
-      Päätimme käyttää sequelizea tietokantojen käsittelyyn, ja tämä osoittautui mielestäni toimivaksi ratkaisuksi. Alla esimerkit Sequelizen mallista ja metodista jolla
+      Päätimme käyttää sequelizea tietokantojen käsittelyyn, ja tämä osoittautui mielestäni toimivaksi ratkaisuksi. Alla esimerkit Sequelizen mallista, ja metodista jolla
        lisätään käyttäjälle merkintä suoritetusta quizista.
     </p> 
 <pre class="language-javascript box"><code>
@@ -233,13 +229,73 @@ updateQuizCompleted: (req, res) => {
 
 
 <h2 class="fend">Quizit - Frontend</h2>
+<p>Frontendiin käyttäjälle piti saada näkyviin quizin kysymys, vastausvaihtoehdot ja vastauksen tulos, ja päästää käyttäjä seuraavaan kysymykseen.
+   Tämän lisäksi komponentin piti lisäillä backendiin käyttäjän progressio, ja näyttää se myös käyttäjälle tulosruudussa.
+   Alla kuvissa näytettynä nextQuestion() - metodi, joka päästää käyttäjän seuraavaan kysymykseen, kunnes quiz on ohi, näyttää tulosruudun
+   ja kirjaa tapahtumat tietokantaan. Toisessa kuvassa on quizien html-tiedostosta toiminnallinen pätkä.
+</p>
+<pre class="language-javascript box"><code>
+nextQuestion(): void {
+  this.questionCounter++;
+  if (this.questionCounter >= this.questions.length) {
+    this.results = true;
+    this.updateTries();
+    let currency = this.user.currency + this.quizdata.reward;
+    this.userService.updateCurrency(this.user, currency).subscribe();
+    this.updateUserExperience(this.user, this.quizExperienceReward);
 
+    if (this.user.experience + this.quizExperienceReward >= 50) {
+      this.levelup = true;
+    }
+    console.log(this.quizExperienceReward)    
 
+    if(this.correctCounter === this.questions.length) {
+      this.updateCompleted();
+    }
 
+    if (this.results) {
+      document.getElementById("quiz").style.display = "none";
+
+    }
+    console.log(this.results);
+  } else {
+    this.getWrongAnswers();
+    this.randomizeAnswers();
+    this.buttoncolor = false;
+    this.greenbuttoncolor = false;
+    this.buttonsDisabled = false;
+    this.randomizeButtons();
+    console.log(this.correctCounter);
+  }
+  console.log(this.questionCounter);
+}
+  </code> </pre>
+
+  <script type="text/plain" class="language-markup box9">
+<div id="quiz">
+  <mat-card id="questionCard">
+  <h3>{{ questions[questionCounter]?.question }}</h3>
+  </mat-card>
+
+  <mat-card id="answersCard">
+      <img src="{{questions[questionCounter]?.mediaurl}}" class="quizImg">
+  <ul id="answers">
+      <li><button class="answerbutton" mat-flat-button [disabled]="buttonsDisabled" (click)="correctAnswer()" [ngStyle]="{'background-color' : greenbuttoncolor ? 'green' : '#54156e'}">{{questions[questionCounter]?.correct}}</button></li>
+      <li><button id=wronganswerbutton1 class="answerbutton" mat-flat-button [disabled]="buttonsDisabled" (click)="wrongAnswer(1)" [ngStyle]="{'background-color' : buttoncolor ? 'red' : '#54156e'}">{{wrongAnswers[randomWrongAnswers[0]]?.answer}}</button></li>
+      <li><button id=wronganswerbutton2 class="answerbutton" mat-flat-button [disabled]="buttonsDisabled" (click)="wrongAnswer(2)" [ngStyle]="{'background-color' : buttoncolor ? 'red' : '#54156e'}">{{wrongAnswers[randomWrongAnswers[1]]?.answer}}</button></li>
+      <li><button id=wronganswerbutton3 class="answerbutton" mat-flat-button [disabled]="buttonsDisabled" (click)="wrongAnswer(3)" [ngStyle]="{'background-color' : buttoncolor ? 'red' : '#54156e'}">{{wrongAnswers[randomWrongAnswers[2]]?.answer}}</button></li>
+  </ul>
+  </mat-card>
+  <br>
+</div>
+    </script>
 
 
   </div>
-
+  <div>
+    
+  </div>
+<footer>Johannes Jokinen</footer>
  <script src="fsa.js"></script>
  <script src="prism.js"></script>
 </body>
