@@ -360,6 +360,65 @@ this.userService
 </div>
     </script>
   </p>
+
+  <div>
+    <h2 class="nodemailer">Rekisteröityminen - Nodemailer</h2>
+    <p>Rekisteröinnin yhteydessä halusimme lähettää käyttäjälle sähköpostin, joka kertoo käyttäjälle rekisteröitymisen onnistuneen.
+      Todennäköisesti myös product labissa otamme käyttöön salasanan turvallisen palauttamisen nodemailerin avulla, mikäli projekti sinne viedään.
+      Tällä aikataululla salasanan palautus ei ehtinyt projektiin mukaan, 
+       sillä toiminnallisia ongelmia oli sen verran, että halusimme saada ne kuntoon ensiksi. Alla olevassa kuvassa on koodia backendista, jossa 
+       rekisteröitymisen yhteydessä määritetään ja lähetetään käyttäjälle sähköpostia, luodaan käyttäjä, ja annetaan käyttäjälle aloitusarvot.
+    </p>
+    <pre class="language-typescript box8"><code>
+createUser: (req, res) => {
+  const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+  const emaili = req.body.email;
+  const username1 = req.body.username;
+  let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+          user: process.env.EMAIL,
+          pass: process.env.PASSWORD
+      }
+  });
+
+  let mailOptions = {
+      from: 'acornporate@gmail.com',
+      to: emaili,
+      subject: 'Welcome to Acorn-Family!',
+      text: 'You have succssessfully created an account! Your username is ' + username1 + ' Thanks. HAVE FUN. Don´t do drugs.'
+  }
+
+  transporter.sendMail(mailOptions, function(err, data) {
+      if (err) {
+          console.log('errori');
+      } else {
+          console.log('email sent')
+      }
+  });
+  
+  User.create({
+      email: req.body.email,
+      username: req.body.username,
+      psw: hashedPassword,
+      experience: 0,
+      lvl: 1,
+      currency: 0,
+      streak: 0,
+      token: 2,
+      quizcounter: 1,
+      practisecounter: 1,
+  })
+      .then((user) => {
+          res.json(user);
+      })
+      .catch((err) => {
+          console.log(err);
+          return res.status(500).send('Email is already in use');
+      });
+  };
+      </code> </pre>
+  </div>
   </div>
   <div>
     
