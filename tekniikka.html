@@ -291,9 +291,80 @@ nextQuestion(): void {
     </script>
 
 
+  <h1 class="reg">Rekisteröityminen</h1>
+  <p> Tein paljon töitä myös rekisteröitymisen kanssa. Rekisteröityminen tapahtuu omassa komponentissaan, joka pyytää käyttäjältä tiedot,
+     lähettää ne backendiin, hashaa salasanan, ja sen jälkeen kirjoittaa kaiken ylös tietokantaan turvallisesti. Vasemmalla alapuolella olevassa kuvassa 
+     on createUser() - metodi, joka luo käyttäjän, ja lähettää tiedot backendiin, jos käyttäjä laittaa hyväksyttävät tiedot oikeassa muodossa.
+     Virheen tapahtuessa käyttäjälle ilmoitetaan jos sähköposti on jo käytössä, tai sitten jo lomaketta täyttäessä, jos jokin kohta ei vastaa annettuja
+      kriteerejä. Lopullisessa komponentissa myös lisätään käyttäjälle kirja ja kitara metodissa, mutta itse en sitä ollut tekemässä, joten pilkoin 
+      sen pois koodista. Oikean puolen koodissa on kuva formin username- kohdasta, joka näyttää toimintalogiikkaa ilmoituksista käyttäjälle jo formia
+       täyttäessä.
+</p>
+
+  </p>
+
+  <pre class="language-typescript box"><code>
+createUser(): void {
+this.userService
+  .createUser(this.email, this.username, this.password)
+  .subscribe(
+    data => {
+      console.log(data);
+      this.registrationSuccessful = true;
+
+// Otetaan talteen tulevan käyttäjän userid
+      const user = this.userid + 1;
+      console.log(this.userid);
+      
+// luodaan useritem-tauluun tavaratietueet
+      for (let i = 0; i < this.items.length; i++) {
+        this.createUserItem(user,this.items[i].item);
+        console.log(this.items[i].itemname);
+      }
+      
+// Pienen viiveen jälkeen siirrytään login-ruutuun
+      setTimeout(() => this.router.navigate(['/login']), 3000);
+
+    }, (err) => {
+      console.log(err);
+      if(err.errors.email) {
+        this.errorMessage = "Email address is already in use";
+        this.error = true;
+      }
+    }
+  );
+}
+    </code> </pre>
+    <script type="text/plain" class="language-markup box9">
+<mat-form-field appearance="outline">
+  <mat-label for="username">Username</mat-label>
+
+  <input matInput
+    required minlength="3"
+    maxlength="15" 
+    ngModel name="username" 
+    #username="ngModel" 
+    (change)="setUsername(username)
+    "id="username"
+     type="text"
+     class="form-control"
+  >
+
+</mat-form-field>
+
+<div class="error-msg-container">
+    <div class="alert alert-danger"*ngIf="username.touched && !username.valid">
+        <p class="errorMsg"*ngIf="username.errors.required">Username is required</p>
+        <p class="errorMsg"*ngIf="username.errors.minlength">Username must be at least 3 characters</p>
+    </div>
+</div>
+    </script>
+  </p>
   </div>
   <div>
     
+
+  
   </div>
 <footer>Johannes Jokinen</footer>
  <script src="fsa.js"></script>
