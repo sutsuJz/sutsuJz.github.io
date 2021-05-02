@@ -283,7 +283,7 @@ nav {
                       7px 7px 0px #c11a2b;
     
     }
-    .etusivu img {
+    #mie {
         display: none;
     }
    .etusivu p {
@@ -477,4 +477,8 @@ ul {
     height: 350px;
    float:right ;
    width: 45%;
+}
+
+.fend {
+    margin-top: 480px;
 }

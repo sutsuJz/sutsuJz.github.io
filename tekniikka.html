@@ -126,7 +126,7 @@
        tietokannan luomista, ja tietojen hakemista tietokannasta backendin kautta.
     </p>
     <div>
-      <pre class="language-css box"><code>
+      <pre class="language-sql box"><code>
 CREATE TABLE Quiz (
   quiz INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(30) NOT NULL,
@@ -176,11 +176,12 @@ getWrongAnswers: (req, res) => {
         </code> </pre>
     </div>
 
-    <h2 id="qbend">Quizit - Backend</h2>
+<h2 id="qbend">Quizit - Backend</h2>
     <p>Backendin puolella piti tehdä mahdolliseksi quizien löytäminen frontendiin tietokannoista, sekä niiden muokkaaminen frontendin tapahtumien perusteella.
-      Päätimme käyttää sequelizea tietokantojen käsittelyyn, ja tämä osoittautui mielestäni toimivaksi ratkaisuksi. Alla esimerkkikuvia Sequelizen mallista ja backendista.
+      Päätimme käyttää sequelizea tietokantojen käsittelyyn, ja tämä osoittautui mielestäni toimivaksi ratkaisuksi. Alla esimerkit Sequelizen mallista ja metodista jolla
+       lisätään käyttäjälle merkintä suoritetusta quizista.
     </p> 
-    <pre class="language-javascript box"><code>
+<pre class="language-javascript box"><code>
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../dbconnection');
 
@@ -213,7 +214,29 @@ const Quiz = sequelize.define('Quiz', {
 });
 
 module.exports = Quiz;
-      </code> </pre>
+</code> </pre>
+
+<pre class="language-javascript box1"><code>
+updateQuizCompleted: (req, res) => {
+  UserQuiz.increment('completed', {
+      where: {
+          userid: req.body.userid,
+          quiz: req.body.quiz 
+      }
+  }).then(() => {
+      res.json('Completed updated by +1');
+  }).catch((err) => {
+      console.log(err);
+  });
+},
+</code> </pre>
+
+
+<h2 class="fend">Quizit - Frontend</h2>
+
+
+
+
 
   </div>
 
