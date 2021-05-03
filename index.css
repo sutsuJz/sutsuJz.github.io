@@ -618,6 +618,7 @@ footer {
     margin-left: 20%;
     margin-right: 20%;
     text-align: left;
+    margin-bottom: 400px;
    
 }
 
@@ -645,3 +646,25 @@ footer {
 .scam {
     margin-top: 50px;
 }
+
+.esipuhe img {
+    float: none;
+    height: 350px;
+    width:auto;
+    margin-left: 20%;
+    filter: brightness(100%);
+  
+}
+
+#getBig:hover {
+    transform: scale(2.5, 2.5);
+    transition: 0.9s;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
+    
+  }
+  
+  #getBig:not(:hover) {
+    transform: scale(1, 1);
+    transition: 0.9s ease-in-out;
+  }
