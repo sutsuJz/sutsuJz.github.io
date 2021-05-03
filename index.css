@@ -186,10 +186,11 @@ nav {
     border-radius: 5px;
   }
   .test {
-    background-color: rgba(0, 0, 0, 0.562);
+    background-color: rgba(0, 0, 0, 0.788);
     transition: 5s ease;
     
   }
+  
   .test h3 {
       color: white;
   }
@@ -227,6 +228,15 @@ nav {
     .burger {
       display: block;
     }
+    .test .nav-active a {
+        font-weight: 500;
+        }
+      .test .nav-active {
+        background-color: rgba(0, 0, 0, 0.74);
+        transition: 1s ease;
+        font-size: 17px;
+       
+      }
     .nav-active {
         transform: translateY(100%);
         margin-top: 75px;
@@ -487,7 +497,7 @@ nav {
     justify-content: space-around;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 50px;
+    margin-top: -60px;
 }
 .gridItem {
     display: flex;
@@ -525,10 +535,11 @@ nav {
     margin-left: 40px;
     margin-right: 40px;
     text-align: center;
+    margin-top: 20px;
 }
 .scrumItem1 p {
     margin-left: 0px;
-    
+    margin-top: 20px;
     text-align: center;
 }
 .scrumItem2 {
@@ -607,6 +618,7 @@ footer {
     margin-left: 20%;
     margin-right: 20%;
     text-align: left;
+   
 }
 
 .esipuhe p {
