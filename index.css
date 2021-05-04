@@ -589,6 +589,14 @@ footer {
         width: 100%;
         height: 350px;
     }
+    .esipuhe1 img {
+        float: none;
+        height: 150px;
+        width:auto;
+        margin-left: 0%;
+        filter: brightness(100%);
+      
+    }
     
 
     #qbend, .fend, .reg, .nodemailer {
@@ -604,6 +612,14 @@ footer {
   
 @media only screen and (max-width: 830px) {
    
+    .esipuhe1 img {
+        float: none;
+        height: 150px;
+        width:auto;
+        margin-left: -5%;
+        filter: brightness(100%);
+      
+    }
     .scrumItem1, .scrumItem p, .scrumItem1 p, .scrumItem2, .scrumItem2 p {       
         margin: 2% 5%;
     }
@@ -685,7 +701,7 @@ footer {
       border-radius: 5px;
     }
     .container h1 {
-        font-size: 60px;
+        font-size: 40px;
         font-family: 'Poppins', sans-serif;
         margin-top: 350px;
         padding: 0;
