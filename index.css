@@ -76,7 +76,7 @@ body {
     margin-left: 0%;
     margin-right: 32%;
 }
-#mie {
+.mie {
     margin-bottom: -30%;
     margin-left: 0px
 }
@@ -206,106 +206,6 @@ nav {
   }
   
 
-@media only screen and (max-width: 830px) {
-    .nav {
-      display: none;
-    }
-    .navig {
-      position: absolute;
-      right: 0px;
-      height: 300px;
-      top: -300px;
-      background-color: #ffffff;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      transform: translateY(0%);
-      transition: transform 0.3s ease-in-out;
-    }
-    .navig li {
-      opacity: 100%;
-    }
-    .burger {
-      display: block;
-    }
-    .test .nav-active a {
-        font-weight: 500;
-        }
-      .test .nav-active {
-        background-color: rgba(0, 0, 0, 0.74);
-        transition: 1s ease;
-        font-size: 17px;
-       
-      }
-    .nav-active {
-        transform: translateY(100%);
-        margin-top: 75px;
-        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
-      }
-    
-    .etusivu img {
-        display: none;
-    }
-    
-
-    .container h1 {
-        font-size: 60px;
-        font-family: 'Poppins', sans-serif;
-        margin-top: 350px;
-        padding: 0;
-        color: white;
-        margin-left: 105px;
-        text-shadow: 1px 1px 0px #eb452b, 
-                      2px 2px 0px #efa032, 
-                      3px 3px 0px #46b59b, 
-                      4px 4px 0px #017e7f, 
-                      5px 5px 0px #052939, 
-                      6px 6px 0px #c11a2b, 
-                      7px 7px 0px #c11a2b;
-    
-    }
-    
-
-}
-
-@media screen and (max-width: 600px) {
-    .logo {
-      font-size: 13px;
-    }
-    .burger div {
-      width: 20px;
-      height: 2px;
-      background: black;
-      margin: 5px;
-      border-radius: 5px;
-    }
-    .container h1 {
-        font-size: 60px;
-        font-family: 'Poppins', sans-serif;
-        margin-top: 350px;
-        padding: 0;
-        color: white;
-        margin-left: 105px;
-        text-shadow: 1px 1px 0px #eb452b, 
-                      2px 2px 0px #efa032, 
-                      3px 3px 0px #46b59b, 
-                      4px 4px 0px #017e7f, 
-                      5px 5px 0px #052939, 
-                      6px 6px 0px #c11a2b, 
-                      7px 7px 0px #c11a2b;
-    
-    }
-    #mie {
-        display: none;
-    }
-   .etusivu p, a {
-        font-family: 'Poppins', sans-serif;
-        display:block;
-        margin: 2%;
-        text-align: center;
-        font-weight: 200;
-    }
-  }
 
     .container-1{
     display: flex;
@@ -631,6 +531,9 @@ footer {
     margin-bottom: 400px;
    
 }
+.esipuhe1 p {
+    margin-left: 0px;
+}
 
 .esipuhe p {
     margin-left: 0px;
@@ -644,15 +547,6 @@ footer {
     
 }
 
-#acorn {
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: -232px;
-    height: 480px;
-    width:auto;
-    float: right;
-   
-}
 .scam {
     margin-top: 50px;
 }
@@ -680,12 +574,6 @@ footer {
   }
 
   @media screen and (max-width: 1900px) {
-      #acorn {
-          display: none;
-      }
-  }
-
-  @media screen and (max-width: 1900px) {
     .box {
         height: 350px;
         width: 100%;
@@ -700,5 +588,126 @@ footer {
         margin-left: 0px;
         width: 100%;
         height: 350px;
+    }
+    
+
+    #qbend, .fend, .reg, .nodemailer {
+        margin-top: 2%;
+    }
+
+    .box, .box1, .box9 {
+    float: none;
+    
+    }
+  }
+
+  
+@media only screen and (max-width: 830px) {
+   
+    .scrumItem1, .scrumItem p, .scrumItem1 p, .scrumItem2, .scrumItem2 p {       
+        margin: 2% 5%;
+    }
+    
+   
+    p {
+        margin-left: 5%;
+    }
+    .nav {
+      display: none;
+    }
+    .navig {
+      position: absolute;
+      right: 0px;
+      height: 300px;
+      top: -350px;
+      background-color: #ffffff;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      transform: translateY(0%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .navig li {
+      opacity: 100%;
+    }
+    .burger {
+      display: block;
+    }
+    .test .nav-active a {
+        font-weight: 500;
+        }
+      .test .nav-active {
+        background-color: rgba(0, 0, 0, 0.74);
+        transition: 1s ease;
+        font-size: 17px;
+       
+      }
+    .nav-active {
+        transform: translateY(115%);
+        margin-top: 75px;
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+      }
+    
+    .etusivu img {
+        display: none;
+    }
+    
+
+    .container h1 {
+        font-size: 60px;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 350px;
+        padding: 0;
+        color: white;
+        margin-left: 105px;
+        text-shadow: 1px 1px 0px #eb452b, 
+                      2px 2px 0px #efa032, 
+                      3px 3px 0px #46b59b, 
+                      4px 4px 0px #017e7f, 
+                      5px 5px 0px #052939, 
+                      6px 6px 0px #c11a2b, 
+                      7px 7px 0px #c11a2b;
+    
+    }
+    
+
+}
+
+@media screen and (max-width: 600px) {
+    .logo {
+      font-size: 13px;
+    }
+    .burger div {
+      width: 20px;
+      height: 2px;
+      background: black;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    .container h1 {
+        font-size: 60px;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 350px;
+        padding: 0;
+        color: white;
+        margin-left: 105px;
+        text-shadow: 1px 1px 0px #eb452b, 
+                      2px 2px 0px #efa032, 
+                      3px 3px 0px #46b59b, 
+                      4px 4px 0px #017e7f, 
+                      5px 5px 0px #052939, 
+                      6px 6px 0px #c11a2b, 
+                      7px 7px 0px #c11a2b;
+    
+    }
+    .mie {
+        display: none;
+    }
+   .etusivu p, a {
+        font-family: 'Poppins', sans-serif;
+        display:block;
+        margin: 2%;
+        text-align: center;
+        font-weight: 200;
     }
   }
