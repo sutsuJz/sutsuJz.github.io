@@ -12,7 +12,200 @@
   <title>Johannes Jokinen</title>
   <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+
 </head>
-<body>
+<body onload="togglaus2(), togglaus()">
+   
+    <script>
+        function togglaus() {
+        var x = document.getElementById("myDIV");
+        var y = document.getElementById("myDIV2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+    }
+
+function togglaus2() {
+    var x = document.getElementById("myDIV2");
+    var y = document.getElementById("myDIV");
+
+if (x.style.display === "none") {
+x.style.display = "block";
+y.style.display = "none";
+} else {
+x.style.display = "none";
+}
+}
+</script>
+<div id="jypi">
     <h3>Jypi</h3>
+    <button type="button" onclick="togglaus()" class="btn btn-primary">Juomat!</button>
+    <button type="button" onclick="togglaus2()" class="btn btn-primary">Ruoat!</button>
+    
+
+    <br><br><br><br><br><br>
+    
+    
+</div>
+    <div id="myDIV">
+        <h3>Alkoholit</h3>
+        <script>
+            let olut = 0;
+            let hinta1 = 0;
+            let lonkero = 0;
+            hinta2 = 0;
+           function olut2() {
+               olut = olut + 1;
+               hinta1 = hinta1 + 5;
+               if(olut < 0) {
+                olut = 0;
+            }
+            if(hinta1 < 0) {
+                hinta1 = 0;
+            }
+               console.log(olut)
+               document.getElementById('olut1').innerHTML = olut + "kpl " + hinta1 + "€";
+           }
+
+           function olut3() {
+               olut = olut - 1;
+               hinta1 = hinta1 - 5;
+               if(olut < 0) {
+                olut = 0;
+            }
+            if(hinta1 < 0) {
+                hinta1 = 0;
+            }
+               console.log(olut)
+               document.getElementById('olut1').innerHTML = olut + "kpl " + hinta1 + "€";
+           }
+
+           function olut4() {
+            
+            lonkero = lonkero + 1;
+            hinta2 = hinta2 + 6;
+            if(lonkero < 0) {
+                lonkero = 0;
+            }
+            if(hinta2 < 0) {
+                hinta2 = 0;
+            }
+               console.log(lonkero)
+               document.getElementById('olut2').innerHTML = lonkero + "kpl " + hinta2 + "€";
+           }
+
+           function olut5() {
+            lonkero = lonkero - 1;
+            hinta2 = hinta2 - 6;
+            if(lonkero < 0) {
+                lonkero = 0;
+            }
+            if(hinta2 < 0) {
+                hinta2 = 0;
+            }
+               console.log(lonkero)
+               document.getElementById('olut2').innerHTML = lonkero + "kpl " + hinta2 + "€" ;
+           }
+        </script>
+        
+    <p>Sandels 5€</p>
+    <button type="button" onclick="olut2()" class="btn btn-primary"> + </button>
+    <button type="button" onclick="olut3()" class="btn btn-primary"> - </button>
+    <p id="olut1"></p>
+
+    <br><br><br><br>
+    <p>Lonkero 6€</p>
+
+    <button type="button" onclick="olut4()" class="btn btn-primary"> + </button>
+    <button type="button" onclick="olut5()" class="btn btn-primary"> - </button>
+
+    <p id="olut2"></p>
+    
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    <div id="myDIV2">
+        <h3>Ruuat!</h3>
+        <script>
+            let olut6 = 0;
+            let hinta16 = 0;
+            let lonkero6 = 0;
+            let hinta26 = 0;
+           function olut66() {
+               olut6 = olut6 + 1;
+               hinta16 = hinta16 + 10;
+               if(olut6 < 0) {
+                olut6 = 0;
+            }
+            if(hinta16 < 0) {
+                hinta16 = 0;
+            }
+               console.log(olut6)
+               document.getElementById('olut16').innerHTML = olut6 + "kpl " + hinta16 + "€";
+           }
+
+           function olut7() {
+               olut6 = olut6 - 1;
+               hinta16 = hinta16 - 10;
+               if(olut6 < 0) {
+                olut6 = 0;
+            }
+            if(hinta16 < 0) {
+                hinta16 = 0;
+            }
+               console.log(olut6)
+               document.getElementById('olut16').innerHTML = olut6 + "kpl " + hinta16 + "€";
+           }
+
+           function olut8() {
+            
+            lonkero6 = lonkero6 + 1;
+            hinta26 = hinta26 + 6;
+            if(lonkero6 < 0) {
+                lonkero6 = 0;
+            }
+            if(hinta26 < 0) {
+                hinta26 = 0;
+            }
+               console.log(lonkero6)
+               document.getElementById('olut26').innerHTML = lonkero6 + "kpl " + hinta26 + "€";
+           }
+
+           function olut9() {
+            lonkero6 = lonkero6 - 1;
+            hinta26 = hinta26 - 6;
+            if(lonkero6 < 0) {
+                lonkero6 = 0;
+            }
+            if(hinta26 < 0) {
+                hinta26 = 0;
+            }
+               console.log(lonkero6)
+               document.getElementById('olut26').innerHTML = lonkero6 + "kpl " + hinta26 + "€" ;
+           }
+        </script>
+        
+    <p>Siivet! 10€</p>
+    <button type="button" onclick="olut66()" class="btn btn-primary"> + </button>
+    <button type="button" onclick="olut7()" class="btn btn-primary"> - </button>
+    <p id="olut16"></p>
+
+    <br><br><br><br>
+    <p>Hain evä 6€</p>
+
+    <button type="button" onclick="olut8()" class="btn btn-primary"> + </button>
+    <button type="button" onclick="olut9()" class="btn btn-primary"> - </button>
+
+    <p id="olut26"></p>
+    
+    </div>
 </body>
