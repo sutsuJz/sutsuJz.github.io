@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta charset="utf-8">
+  <meta name="author" content="Johannes Jokinen">
+  <meta name="description" content="Portfolio">
+  <meta name="keywords" content="Portfolio, Ticorporate, Tiko, Johannes">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="media/butters_squirrel_icon.ico" />
+  <title>Johannes Jokinen</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav id="navi">
+    <div>
+    </div>
+    <div class="logo"><a href="index.html">
+      <h3>Johannes Jokinen</h3>
+  </a>
+</div>
+    <ul class="navig">
+      <li class="onsite"> <a href="index.html">Etusivu</a></li>
+      <li> <a href="tekniikka.html">Tekniikka</a></li>
+      <li> <a href="scrum.html">Scrum</a></li>
+      <li> <a href="indexeng.html">Languaage</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+  </div>
+  
+  </nav>
+
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Johannes Jokinen</h1>
+  </div>
+  <img class="mie5" src="media/Screenshot_19.png" alt="jypi"></div>
+  <img class="mie4" src="media/Screenshot_20.png" alt="jypi"></div>
+  <pre class="language-python box"><code>
+    import random
+import pandas as pd
+import xlrd
+
+#Joukkuedatan lisäys
+global xtempo
+df = pd.read_excel('NHLL.xlsx',sheet_name='teams')
+kdf = df['TB']
+vdf = df['PHI']
+vtempo = vdf[0]
+ktempo = kdf[0]
+global kmv
+kmv = kdf[1]
+global vmv
+vmv = vdf[1]
+kjengi = kdf[5]
+vjengi = vdf[5]
+print()
+print()
+print("Kotijoukkue", kjengi,"Vierasjoukkue", vjengi)
+xtempo = round((ktempo+vtempo)/2)
+global kotialotusetu
+kalo = kdf[2]
+valo = vdf[2]
+global kshoot
+global vshoot
+kshoot = kdf[3]
+vshoot = vdf[3]
+
+
+
+kotialotusetu = (kalo - valo)
+if kotialotusetu < 0:
+	kotialotusetu -= 5
+elif kotialotusetu > 0:
+	kotialotusetu += 5
+else:
+	kotialotusetu = 0
+print()
+#print("Kotijoukkueen kiekonhallinta suhteessa vierasjoukkueeseen", kotialotusetu)
+
+#Ihan vitusti muuttujia	
+
+global k1
+global k2
+global k3 
+global k4
+global k5
+global k6
+global k7
+global k8
+global v0 
+global v1
+global v2
+global v3
+global v4
+global v5
+global v6
+global v7
+global k0
+global v8
+global ky
+global vy
+global k10
+global v10
+k1 = 0
+k2 = 0
+k3 = 0
+k4 = 0
+k5 = 0
+k6 = 0
+k7 = 0
+k8 = 0
+v0 = 0
+v1 = 0
+v2 = 0
+v3 = 0
+v4 = 0
+v5 = 0
+v6 = 0
+v7 = 0
+k0 = 0
+v8 = 0
+ky = 0
+vy = 0
+v10 = 0
+k10 = 0
+kmaalit = 0
+vmaalit = 0
+klaukaukset = 0
+vlaukaukset = 0
+kjaahyt = 0
+vjaahyt = 0
+global ktulos
+global vtulos
+ktulos = 0
+vtulos = 0
+global kvoitto
+global vvoitto
+kvoitto = 0
+vvoitto = 0
+global u55
+global o55
+u55 = 0
+o55 = 0
+
+#alotetaan ohjelman määrittäminen
+def ottelu():
+	#Ihan vitusti muuttujia. taas.
+	tilanne = 0
+	kotijaahy = 0
+	vierasjaahy = 0
+	kotilaukaukset = 0
+	vieraslaukaukset = 0
+	kotimaali = 0
+	vierasmaali = 0
+	global ktulos
+	global vtulos
+	global klaukaukset
+	global vlaukaukset 
+	global kjaahyt
+	global vjaahyt
+	global k1
+	global k2
+	global k3 
+	global k4
+	global k5
+	global k6
+	global k7
+	global k8
+	global v0 
+	global v1
+	global v2
+	global v3
+	global v4
+	global v5
+	global v6
+	global v7
+	global k0
+	global v8
+	global ky
+	global vy
+	global k10
+	global v10
+	global kvoitto
+	global vvoitto
+	global xtempo
+	global kmv
+	global vmv
+	global kotialotusetu
+	global kshoot
+	global vshoot
+	global o55
+	global u55
+
+
+
+
+	#Määritellään montako tilannetta halutaan käsitellä
+	maara = xtempo
+	while tilanne < maara:
+
+		#Arvotaan kontrolli
+
+		x = random.randint(0,1000)
+		
+		if (x-kotialotusetu) < 500: 
+			
+			#Jos koti saa kiekon
+
+			y = random.randint(0,1000)
+			#2% sauma ylivoimaan
+			if y > 980:
+				
+				vierasjaahy += 1
+
+				#arvotaan ylivoiman laatu
+				yvtaso = random.randint(0,1000)
+
+				if yvtaso >= 900:
+					#Paras yv
+					mp1 = random.randint(0,kshoot)
+					if mp1 >= vmv-450:
+						kotimaali += 1
+						kotilaukaukset += 1
+						tilanne += 1
+		
+					else: 
+						kotilaukaukset += 1
+						mp2 = random.randint(0,kshoot)
+						if mp2 >= vmv-200:
+							kotimaali += 1
+							kotilaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							kotilaukaukset +=1
+							mp3 = random.randint(0,kshoot)
+							if mp3 > vmv-100:
+								kotimaali += 1
+								kotilaukaukset += 1
+								tilanne += 1
+								
+							else:
+								kotilaukaukset += 1
+								mp4 = random.randint(0,kshoot)
+								if mp4 > vmv-50:
+									kotimaali += 1
+									kotilaukaukset +=1
+									tilanne += 1
+									
+								else:
+									kotilaukaukset += 1
+									
+									tilanne += 1
+				
+				#Toisiks paras yv
+				elif yvtaso >= 750:
+					mp1 = random.randint(0,kshoot)
+					if mp1 >= vmv-300:
+						kotimaali += 1
+						kotilaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						kotilaukaukset += 1
+						mp2 = random.randint(0,kshoot)
+						if mp2 >= vmv-150:
+							kotimaali += 1
+							kotilaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							kotilaukaukset +=1
+							mp3 = random.randint(0,kshoot)
+							if mp3 > vmv-50:
+								kotimaali += 1
+								kotilaukaukset += 1
+								tilanne += 1
+								
+							else:
+								kotilaukaukset += 1
+								mp4 = random.randint(0,kshoot)
+								if mp4 > vmv-50:
+									kotimaali += 1
+									kotilaukaukset +=1
+									tilanne += 1
+									
+								else:
+									kotilaukaukset += 1
+									
+									tilanne += 1
+
+				#Kolmanneks paras yv
+				elif yvtaso >= 450:
+					mp1 = random.randint(0,kshoot)
+					if mp1 >= vmv-150:
+						kotimaali += 1
+						kotilaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						kotilaukaukset += 1
+						mp2 = random.randint(0,kshoot)
+						if mp2 >= vmv-100:
+							kotimaali += 1
+							kotilaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							kotilaukaukset +=1
+							mp3 = random.randint(0,kshoot)
+							if mp3 > vmv-20:
+								kotimaali += 1
+								kotilaukaukset += 1
+								tilanne += 1
+								
+							else:
+								kotilaukaukset += 1
+								tilanne += 1				
+
+				#Paska yv
+				else: 
+					mp1 = random.randint(0,kshoot)
+					if mp1 >= vmv-50:
+						kotimaali += 1
+						kotilaukaukset += 1
+						tilanne += 1
+						
+					else:
+						tilanne += 1
+							
+
+			#10% sauma laukaukseen
+			elif y > 880:
+
+				#arvotaan laukauksen laatu ja tulos
+				xy = random.randint(0,1000)
+				if xy > 950:
+					xyz = random.randint(0,kshoot)
+					if xyz > vmv-400:
+						kotilaukaukset += 1
+						kotimaali += 1
+						tilanne += 1
+					else:
+			
+						kotilaukaukset += 1
+						tilanne += 1
+				
+				elif  xy > 800:
+					xyz = random.randint(0,kshoot)
+					if xyz > vmv-150:
+						kotilaukaukset += 1
+						kotimaali += 1
+						tilanne += 1
+					else:
+						
+						kotilaukaukset += 1
+						tilanne += 1
+
+				elif xy > 600:
+					xyz = random.randint(0,kshoot)
+					if xyz > vmv-80:
+						
+						kotilaukaukset += 1
+						kotimaali += 1
+						tilanne += 1
+					else:
+						
+						kotilaukaukset += 1
+						tilanne += 1
+
+				else:
+					xyz = random.randint(0,kshoot)
+					if xyz > vmv-30:
+						
+						kotilaukaukset += 1
+						kotimaali += 1
+						tilanne += 1
+					else:
+						#print("Kotijoukkue pääsi laukomaan!")
+						kotilaukaukset += 1
+						tilanne += 1
+
+
+			#Arvotaan henkilökohtainen virhe. koska voidaan. 
+			elif y > 876:
+				
+				vieraslaukaukset += 1
+				kml = random.randint(0,vshoot)
+				if kml > kmv-200:
+					vierasmaali += 1
+					tilanne += 1
+				else:
+					tilanne += 1
+
+
+			#Heitetään kiekkoa katsomoon koska #luilla
+			elif y > 874:
+				
+				#Ylivoimaarvontalottoruletti seuraavat 110 riviä
+				kotijaahy += 1
+				yvtaso = random.randint(0,1000)
+				if yvtaso >= 900:
+					mp1 = random.randint(0,vshoot)
+					if mp1 >= kmv-350:
+						vierasmaali += 1
+						vieraslaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						vieraslaukaukset += 1
+						mp2 = random.randint(0,vshoot)
+						if mp2 >= kmv-200:
+							vierasmaali += 1
+							vieraslaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							vieraslaukaukset +=1
+							mp3 = random.randint(0,vshoot)
+							if mp3 > kmv-100:
+								vierasmaali += 1
+								vieraslaukaukset += 1
+								tilanne += 1
+								
+							else:
+								vieraslaukaukset += 1
+								mp4 = random.randint(0,vshoot)
+								if mp4 > kmv-50:
+									vierasmaali += 1
+									vieraslaukaukset +=1
+									tilanne += 1
+									
+								else:
+									vieraslaukaukset += 1
+									
+									tilanne += 1
+				
+
+				elif yvtaso >= 750:
+					mp1 = random.randint(0,vshoot)
+					if mp1 >= kmv-300:
+						vierasmaali += 1
+						vieraslaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						vieraslaukaukset += 1
+						mp2 = random.randint(0,vshoot)
+						if mp2 >= kmv-150:
+							vierasmaali += 1
+							vieraslaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							vieraslaukaukset +=1
+							mp3 = random.randint(0,vshoot)
+							if mp3 > kmv-50:
+								vierasmaali += 1
+								vieraslaukaukset += 1
+								tilanne += 1
+								
+							else:
+								vieraslaukaukset += 1
+								mp4 = random.randint(0,vshoot)
+								if mp4 > kmv-50:
+									vierasmaali += 1
+									vieraslaukaukset +=1
+									tilanne += 1
+									
+								else:
+									vieraslaukaukset += 1
+									
+									tilanne += 1
+
+				elif yvtaso >= 450:
+					mp1 = random.randint(0,vshoot)
+					if mp1 >= kmv-150:
+						vierasmaali += 1
+						vieraslaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						vieraslaukaukset += 1
+						mp2 = random.randint(0,vshoot)
+						if mp2 >= kmv-100:
+							vierasmaali += 1
+							vieraslaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							vieraslaukaukset +=1
+							mp3 = random.randint(0,vshoot)
+							if mp3 > kmv-20:
+								vierasmaali += 1
+								vieraslaukaukset += 1
+								tilanne += 1
+								
+							else:
+								vieraslaukaukset += 1
+									
+								tilanne += 1				
+
+				else: 
+					mp1 = random.randint(0,vshoot)
+					if mp1 >= kmv-50:
+						vierasmaali += 1
+						vieraslaukaukset += 1
+						tilanne += 1
+						
+					else:
+						tilanne += 1
+						
+			else:
+				
+				tilanne += 1
+
+		#sama paketti vieraiden kanssa	
+		else:
+			
+			#Arvotaan mitä tapahtuu
+			y = random.randint(0,1000)
+			
+			#jäähy kotijoukkueelle
+			if y > 980:
+				kotijaahy += 1
+
+				#Arvotaan yv taso
+				yvtaso = random.randint(0,1000)
+
+				#Paras
+				if yvtaso >= 900:
+					mp1 = random.randint(0,vshoot)
+					if mp1 >= kmv-350:
+						vierasmaali += 1
+						vieraslaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						vieraslaukaukset += 1
+						mp2 = random.randint(0,vshoot)
+						if mp2 >= kmv-200:
+							vierasmaali += 1
+							vieraslaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							vieraslaukaukset +=1
+							mp3 = random.randint(0,vshoot)
+							if mp3 > kmv-100:
+								vierasmaali += 1
+								vieraslaukaukset += 1
+								tilanne += 1
+								
+							else:
+								vieraslaukaukset += 1
+								mp4 = random.randint(0,vshoot)
+								if mp4 > kmv-50:
+									vierasmaali += 1
+									vieraslaukaukset +=1
+									tilanne += 1
+									
+								else:
+									vieraslaukaukset += 1
+									
+									tilanne += 1
+				
+				#Ei paras
+				elif yvtaso >= 750:
+					mp1 = random.randint(0,vshoot)
+					if mp1 >= kmv-300:
+						vierasmaali += 1
+						vieraslaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						vieraslaukaukset += 1
+						mp2 = random.randint(0,vshoot)
+						if mp2 >= kmv-150:
+							vierasmaali += 1
+							vieraslaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							vieraslaukaukset +=1
+							mp3 = random.randint(0,vshoot)
+							if mp3 > kmv-50:
+								vierasmaali += 1
+								vieraslaukaukset += 1
+								tilanne += 1
+								
+							else:
+								vieraslaukaukset += 1
+								mp4 = random.randint(0,vshoot)
+								if mp4 > kmv-50:
+									vierasmaali += 1
+									vieraslaukaukset +=1
+									tilanne += 1
+									
+								else:
+									vieraslaukaukset += 1
+									
+									tilanne += 1
+
+				#Ei paras
+				elif yvtaso >= 450:
+					mp1 = random.randint(0,vshoot)
+					if mp1 >= kmv-150:
+						vierasmaali += 1
+						vieraslaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						vieraslaukaukset += 1
+						mp2 = random.randint(0,vshoot)
+						if mp2 >= kmv-100:
+							vierasmaali += 1
+							vieraslaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							vieraslaukaukset +=1
+							mp3 = random.randint(0,vshoot)
+							if mp3 > kmv-20:
+								vierasmaali += 1
+								vieraslaukaukset += 1
+								tilanne += 1
+								
+							else:
+								vieraslaukaukset += 1
+								
+								tilanne += 1				
+
+				#Ei taaskaan paras.
+				else: 
+					mp1 = random.randint(0,vshoot)
+					if mp1 >= kmv-50:
+						vierasmaali += 1
+						vieraslaukaukset += 1
+						tilanne += 1
+						
+					else:
+						tilanne += 1
+						
+
+
+			#En muista mitä tapahtuu
+			elif y > 880:
+
+				#Ihan sama.
+				xy = random.randint(0,1000)
+				
+				#Arvotaan vieraiden laukauksen taso
+				if xy > 950:
+					xyz = random.randint(0,vshoot)
+					if xyz > kmv-400:
+						
+						vieraslaukaukset += 1
+						vierasmaali += 1
+						tilanne += 1
+					else:
+						
+						vieraslaukaukset += 1
+						tilanne += 1
+				
+				elif  xy > 800:
+					xyz = random.randint(0,vshoot)
+					if xyz > kmv-150:
+						
+						vieraslaukaukset += 1
+						vierasmaali += 1
+						tilanne += 1
+					else:
+						
+						vieraslaukaukset += 1
+						tilanne += 1
+
+				elif xy > 600:
+					xyz = random.randint(0,vshoot)
+					if xyz > kmv-80:
+						
+						vieraslaukaukset += 1
+						vierasmaali += 1
+						tilanne += 1
+					else:
+						
+						vieraslaukaukset += 1
+						tilanne += 1
+
+				else:
+					xyz = random.randint(0,vshoot)
+					if xyz > kmv-30:
+						
+						vieraslaukaukset += 1
+						vierasmaali += 1
+						tilanne += 1
+					else:
+						
+						vieraslaukaukset += 1
+						tilanne += 1
+
+			#Niinimaa
+			elif y > 876:
+				#print("Vaarallinen kiekonmenetys")
+				kotilaukaukset += 1
+				kml = random.randint(0,kshoot)
+				if kml > vmv-200:
+					kotimaali += 1
+					tilanne += 1
+				else:
+					tilanne += 1
+
+			#Kiekkoa katsojaa silmään.
+			elif y > 874:
+				
+				#Ylivoiman taso ja tulos next 100 lines
+				yvtaso = random.randint(0,1000)
+				vierasjaahy += 1
+
+				if yvtaso >= 900:
+					mp1 = random.randint(0,kshoot)
+					if mp1 >= vmv-350:
+						kotimaali += 1
+						kotilaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						kotilaukaukset += 1
+						mp2 = random.randint(0,kshoot)
+						if mp2 >= vmv-200:
+							kotimaali += 1
+							kotilaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							kotilaukaukset +=1
+							mp3 = random.randint(0,kshoot)
+							if mp3 > vmv-100:
+								kotimaali += 1
+								kotilaukaukset += 1
+								tilanne += 1
+								
+							else:
+								kotilaukaukset += 1
+								mp4 = random.randint(0,kshoot)
+								if mp4 > vmv-50:
+									kotimaali += 1
+									kotilaukaukset +=1
+									tilanne += 1
+									
+								else:
+									kotilaukaukset += 1
+									
+									tilanne += 1
+				
+
+				elif yvtaso >= 750:
+					mp1 = random.randint(0,kshoot)
+					if mp1 >= vmv-300:
+						kotimaali += 1
+						kotilaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						kotilaukaukset += 1
+						mp2 = random.randint(0,kshoot)
+						if mp2 >= vmv-150:
+							kotimaali += 1
+							kotilaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							kotilaukaukset +=1
+							mp3 = random.randint(0,kshoot)
+							if mp3 > vmv-50:
+								kotimaali += 1
+								kotilaukaukset += 1
+								tilanne += 1
+								
+							else:
+								kotilaukaukset += 1
+								mp4 = random.randint(0,kshoot)
+								if mp4 > vmv-50:
+									kotimaali += 1
+									kotilaukaukset +=1
+									tilanne += 1
+									
+								else:
+									kotilaukaukset += 1
+									
+									tilanne += 1
+
+				elif yvtaso >= 450:
+					mp1 = random.randint(0,kshoot)
+					if mp1 >= vmv-150:
+						kotimaali += 1
+						kotilaukaukset += 1
+						tilanne += 1
+						
+					else: 
+						kotilaukaukset += 1
+						mp2 = random.randint(0,kshoot)
+						if mp2 >= vmv-100:
+							kotimaali += 1
+							kotilaukaukset += 1
+							tilanne += 1
+							
+						else: 
+							kotilaukaukset +=1
+							mp3 = random.randint(0,kshoot)
+							if mp3 > vmv-20:
+								kotimaali += 1
+								kotilaukaukset += 1
+								tilanne += 1
+								
+							else:
+								kotilaukaukset += 1
+								
+								tilanne += 1				
+
+				else: 
+					mp1 = random.randint(0,kshoot)
+					if mp1 >= vmv-50:
+						kotimaali += 1
+						kotilaukaukset += 1
+						tilanne += 1
+						
+					else:
+						tilanne += 1
+				
+			#Hjalmarssonit lasin kautta keskialueelle		
+			else:
+				tilanne += 1
+
+	#Maalilaskurit
+
+	if kotimaali == 0:
+		k0 += 1
+	elif kotimaali == 1:
+		k1 += 1
+	elif kotimaali == 2:
+		k2 += 1
+	elif kotimaali == 3:
+		k3 += 1
+	elif kotimaali == 4:
+		k4 += 1
+	elif kotimaali == 5:
+		k5 += 1
+	elif kotimaali == 6:
+		k6 += 1
+	elif kotimaali == 7:
+		k7 += 1
+	elif kotimaali == 8:
+		k8 += 1
+	elif kotimaali == 9:
+		ky += 1
+	elif kotimaali > 9:
+		k10 += 1
+
+	if vierasmaali == 0:
+		v0 += 1
+	elif vierasmaali == 1:
+		v1 += 1
+	elif vierasmaali == 2:
+		v2 += 1
+	elif vierasmaali == 3:
+		v3 += 1
+	elif vierasmaali == 4:
+		v4 += 1
+	elif vierasmaali == 5:
+		v5 += 1
+	elif vierasmaali == 6:
+		v6 += 1
+	elif vierasmaali == 7:
+		v7 += 1
+	elif vierasmaali == 8:
+		v8 += 1
+	elif vierasmaali == 9:
+		vy += 1
+	elif vierasmaali > 10:
+		v10 += 1
+
+
+	if kotimaali + vierasmaali < 5.5:
+		u55 += 1
+	else:
+		o55 += 1
+
+	#Datat talteen arvonnoista globaleihin muuttujiin
+	ktulos += kotimaali
+	vtulos += vierasmaali
+	klaukaukset += kotilaukaukset
+	vlaukaukset += vieraslaukaukset
+	kjaahyt += kotijaahy
+	vjaahyt += vierasjaahy
+	#Arvotaan jatkoaikavoitto
+	if kotimaali == vierasmaali:
+		otw = random.randint(0,1000)
+		if otw < 500:
+			kotimaali += 1
+		else:
+			vierasmaali += 1
+
+		
+	#otetaan talteen joka pelin voittaja
+	if kotimaali > vierasmaali:
+		kvoitto += 1
+	else:
+		vvoitto += 1
+
+
+
+
+print()
+#laitetaan looppi ajamaan edellä kirjoitettua ohjelmaa haluttu määrä (ezz=x)
+ezz = 10000
+ez = 0
+while ez < ezz:
+	ottelu()
+	ez += 1
+
+#printtaillaan tarvittavat jutut näkyviin.
+#print("Laukaukset KA")
+#print("Koti ",klaukaukset/ezz,"/ Vieras" ,vlaukaukset/ezz)
+#print()
+#print("Prosenttijakauma joukkueiden maalimääristä peleissä")
+
+#print("Koti")
+
+#print(k0/ezz,k1/ezz,k2/ezz,k3/ezz,k4/ezz,k5/ezz,k6/ezz,k7/ezz,k8/ezz,ky/ezz,k10/ezz)
+#print()
+#print("Vieras")
+#print(v0/ezz,v1/ezz,v2/ezz,v3/ezz,v4/ezz,v5/ezz,v6/ezz,v7/ezz,v8/ezz,vy/ezz,v10/ezz)
+#print()
+#print("Jäähyminuutit keskimäärin/Ottelu")
+#print("Koti", "Vieras")
+#print(kjaahyt/ezz,vjaahyt/ezz)
+print(kjengi,"Tehtyjen maalien odotusarvo", ktulos/ezz)
+print(vjengi,"Tehtyjen maalien odotusarvo",vtulos/ezz)
+#print(kjengi,"ML%",(kvoitto/ezz)*100)
+#print(vjengi,"ML%",(vvoitto/ezz)*100)
+
+print(kjengi,"Rajakerroin", (1/(kvoitto/ezz)))
+print((kvoitto/ezz*100), "% Kotivoiton todennäköisyys")
+print()
+print()
+print(vjengi,"Rajakerroin",(1/(vvoitto/ezz)))
+print((vvoitto/ezz*100), "% Vierasvoiton todennäköisyys")
+print()
+print("Alle 5,5 maalia rajakerroin",(1/u55/ezz))
+print("Yli 5,5 maalia rajakerroin",(1/o55/ezz))
+print()
+print()
+print()
+print(kjengi,"Tehtyjen maalien odotusarvo 2,88")
+print(vjengi,"Tehtyjen maalien odotusarvo 2,55")
+print()
+print(kjengi,"Kerroin jolla voi lyödä vetoa 1,804")
+print((kvoitto/ezz*100), "% Kotivoiton todennäköisyys")
+print()
+print()
+print(vjengi,"Kerroin jolla voi lyödä vetoa 2,244")
+
+print((vvoitto/ezz*100), "% Vierasvoiton todennäköisyys")
+print()
+print()
+      </code> </pre>
+    
+     
+
+    
+
+
+
+
+
+
+  </div>
+  <div></div>
+  
+ <script src="fsa.js"></script>
+
+ 
+</body>
+
+</html>

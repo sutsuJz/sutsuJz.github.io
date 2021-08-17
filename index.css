@@ -732,3 +732,26 @@ footer {
       filter: none;
       width: 25%;
   }
+  .mie4 {
+      position: relative;
+      filter: none;
+      float: left;
+      width: 500px;
+      height: 450px;
+
+
+  }
+  .mie5 {
+   float: left;
+   width: 600px;
+   height: auto;
+   
+}
+
+.mie4, .mie5 {
+    margin-left: 10px;
+}
+
+.language-python {
+    margin-left: 10px;
+}
