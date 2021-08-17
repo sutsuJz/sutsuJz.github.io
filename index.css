@@ -727,3 +727,8 @@ footer {
         font-weight: 200;
     }
   }
+  .testti {
+      float: left;
+      filter: none;
+      width: 25%;
+  }
