@@ -18,7 +18,7 @@
 #asdtesti {
     width: 250px;
     height: 250px;
-    align-items: center;
+    margin-left: 0px;
     
 }
 
@@ -779,10 +779,10 @@ footer {
     .container2 h1 {
         font-size: 40px;
         font-family: 'Poppins', sans-serif;
-        margin-top: 200px;
+        margin-top: 240px;
         padding: 0;
         color: red;
-        margin-left: 50px;
+        margin-left: 40px;
         text-shadow: 1px 1px 0px white, 
                       2px 2px 0px #efa032, 
                       3px 3px 0px #46b59b, 
