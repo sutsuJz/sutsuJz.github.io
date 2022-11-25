@@ -6,6 +6,14 @@
     box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
     
 }
+.container2 {
+    background-image: url(./media/testiespanja.jpg);
+    min-height: 700px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    
+}
 
 body {
     margin: 0;
