@@ -169,10 +169,10 @@ nav {
   }
   
   .logo {
-    color: black;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 1em;
+    font-size: 2em;
     margin-left: 5%;
     flex-grow: 3;
   }
