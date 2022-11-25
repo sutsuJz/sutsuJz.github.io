@@ -15,6 +15,11 @@
     
 }
 
+#asdtesti {
+    width: fit-content;
+    height: fit-content;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -111,7 +116,7 @@ body {
     font-size: 200px;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    margin-top: 225px;
+    margin-top: 200px;
     text-align: center !important;
     padding: 0;
     color: red;
@@ -723,13 +728,13 @@ footer {
     
     }
     .container2 h1 {
-        font-size: 60px;
+        font-size: 100px;
         font-family: 'Poppins', sans-serif;
-        margin-top: 350px;
+        margin-top: 200px;
         padding: 0;
-        color: white;
+        color: red;
         margin-left: 105px;
-        text-shadow: 1px 1px 0px #eb452b, 
+        text-shadow: 1px 1px 0px white, 
                       2px 2px 0px #efa032, 
                       3px 3px 0px #46b59b, 
                       4px 4px 0px #017e7f, 
@@ -770,13 +775,13 @@ footer {
     
     }
     .container2 h1 {
-        font-size: 40px;
+        font-size: 100px;
         font-family: 'Poppins', sans-serif;
-        margin-top: 350px;
+        margin-top: 200px;
         padding: 0;
-        color: white;
+        color: red;
         margin-left: 105px;
-        text-shadow: 1px 1px 0px #eb452b, 
+        text-shadow: 1px 1px 0px white, 
                       2px 2px 0px #efa032, 
                       3px 3px 0px #46b59b, 
                       4px 4px 0px #017e7f, 
