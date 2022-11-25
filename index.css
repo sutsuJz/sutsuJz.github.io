@@ -7,7 +7,7 @@
     
 }
 .container2 {
-    background-image: url(./media/testiespanja.jpg);
+    background-image: url(./media/spanish-tapas-party-773719.jpg);
     min-height: 700px;
     background-size: cover;
     background-position: center;
@@ -169,10 +169,10 @@ nav {
   }
   
   .logo {
-    color: white;
+    color: black;
     text-transform: uppercase;
     letter-spacing: 5px;
-    font-size: 2em;
+    font-size: 1em;
     margin-left: 5%;
     flex-grow: 3;
   }
