@@ -113,9 +113,9 @@ body {
     font-weight: 600;
     margin-top: 350px;
     padding: 0;
-    color: white;
+    color: red;
     margin-left: 105px;
-    text-shadow: 5px 5px 0px #eb452b, 
+    text-shadow: 5px 5px 0px white, 
                   10px 10px 0px #efa032, 
                   15px 15px 0px #46b59b, 
                   20px 20px 0px #017e7f, 
