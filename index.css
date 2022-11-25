@@ -106,6 +106,24 @@ body {
                   35px 35px 0px #c11a2b;
 
 }
+
+.container2 h1 {
+    font-size: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 350px;
+    padding: 0;
+    color: white;
+    margin-left: 105px;
+    text-shadow: 5px 5px 0px #eb452b, 
+                  10px 10px 0px #efa032, 
+                  15px 15px 0px #46b59b, 
+                  20px 20px 0px #017e7f, 
+                  25px 25px 0px #052939, 
+                  30px 30px 0px #c11a2b, 
+                  35px 35px 0px #c11a2b;
+
+}
 img {
     filter: brightness(80%);
     float: right;
@@ -114,6 +132,16 @@ img {
     }
 
 .container p {
+    font-family: 'Poppins', sans-serif;
+    display:block;
+    margin: 2% 10%;
+    text-align: center;
+    font-weight: 200;
+    margin-right: 40%;
+    margin-left: 20%;
+}
+
+.container2 p {
     font-family: 'Poppins', sans-serif;
     display:block;
     margin: 2% 10%;
@@ -693,6 +721,22 @@ footer {
                       7px 7px 0px #c11a2b;
     
     }
+    .container2 h1 {
+        font-size: 60px;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 350px;
+        padding: 0;
+        color: white;
+        margin-left: 105px;
+        text-shadow: 1px 1px 0px #eb452b, 
+                      2px 2px 0px #efa032, 
+                      3px 3px 0px #46b59b, 
+                      4px 4px 0px #017e7f, 
+                      5px 5px 0px #052939, 
+                      6px 6px 0px #c11a2b, 
+                      7px 7px 0px #c11a2b;
+    
+    }
     
 
 }
@@ -709,6 +753,22 @@ footer {
       border-radius: 5px;
     }
     .container h1 {
+        font-size: 40px;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 350px;
+        padding: 0;
+        color: white;
+        margin-left: 105px;
+        text-shadow: 1px 1px 0px #eb452b, 
+                      2px 2px 0px #efa032, 
+                      3px 3px 0px #46b59b, 
+                      4px 4px 0px #017e7f, 
+                      5px 5px 0px #052939, 
+                      6px 6px 0px #c11a2b, 
+                      7px 7px 0px #c11a2b;
+    
+    }
+    .container2 h1 {
         font-size: 40px;
         font-family: 'Poppins', sans-serif;
         margin-top: 350px;
