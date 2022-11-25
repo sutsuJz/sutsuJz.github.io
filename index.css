@@ -778,12 +778,12 @@ footer {
     
     }
     .container2 h1 {
-        font-size: 40px;
+        font-size: 50px;
         font-family: 'Poppins', sans-serif;
         margin-top: 240px;
         padding: 0;
         color: red;
-        margin-left: 40px;
+        margin-left: 30px;
         text-shadow: 1px 1px 0px white, 
                       2px 2px 0px #efa032, 
                       3px 3px 0px #46b59b, 
