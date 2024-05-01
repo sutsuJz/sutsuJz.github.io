@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Form</title>
+    <!-- Include Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHvoRHzYwVMwud85W6oJ_IU4MLAkKHWBo&callback=initMap" async defer></script>
+    <!-- Include your custom JavaScript file -->
+    <script src="mappijs.js"></script>
+</head>
+<body>
+    <h1>Map Form</h1>
+    <form id="myForm" onsubmit="submitForm(); return false;">
+        <!-- Other form fields -->
+        <input type="hidden" name="latitude" id="latitude">
+        <input type="hidden" name="longitude" id="longitude">
+        <div id="map" style="height: 400px; width: 100%;"></div>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="submittedData" style="display: none;">
+        <h2>Submitted Data</h2>
+        <p>Latitude: <span id="submittedLatitude"></span></p>
+        <p>Longitude: <span id="submittedLongitude"></span></p>
+    </div>
+</body>
+</html>
+
+
