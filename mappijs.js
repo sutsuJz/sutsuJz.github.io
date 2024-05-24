@@ -4,7 +4,7 @@ var marker;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 62.243098775724825, lng: 25.74312693607871 },
-        zoom: 8
+        zoom: 15
     });
 
     // Add click event listener to the map
